@@ -1,0 +1,182 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  </div>
+
+ <!-- The sum of the numbers is{{a+b}}<br>
+  Area of circle is {{3.14*radius*radius}}<br>
+  Perimeter of circle is {{2*3.14*radius}}<br>
+Average of 3 numbers is {{(n1+n2+n3)/3}}<br><br>
+
+
+
+Age: <input type="text" [value]="a"><br>
+physics<input type="text" [value]="physics"><br>
+chemistry<input type="text" [value]="chemistry"><br>
+maths<input type="text" [value]="maths"><br>
+hindi<input type="text" [value]="hindi"><br>
+english<input type="text" [value]="english"><br>
+
+<img [src]="path" width=100 height=100><br>
+<button (click)="show()">Click me!</button> -->
+
+
+<!-- sum of numbers using property binding -->
+<!-- <p>
+
+  First number:<input type="text" [value]="a1"><br>
+</p>
+<p>
+
+  Second number:<input type="text" [value]="b1"><br>
+</p>
+
+<p>
+
+  <button (click)="add()">Click me!</button>
+</p>
+
+<p>-->
+
+<!-- Average of numbers using property binding -->
+
+ <!-- Physics<input type="text" [value]="p"><br>
+</p>
+<p>
+
+  Chemistry<input type="text" [value]="c"><br>
+ </p>
+ <p>
+
+  Maths<input type="text" [value]="m"><br>
+ </p>
+ <p>
+
+  Hindi<input type="text" [value]="h"><br>
+ </p>
+ <p>
+
+  English<input type="text" [value]="e"><br>
+ </p>
+
+ <p>
+
+ <button (click)="average()">Average</button>
+ </p>-->
+
+
+ <!-- Average of numbers using 2 way binding -->
+ <!--<h2>Average of numbers using 2 way binding</h2>
+ <p>Physics<input [(ngModel)]="p"></p>
+ <p>Chemistry<input [(ngModel)]="c"></p>
+ <p>Maths<input [(ngModel)]="m"></p>
+ <p>Hindi<input [(ngModel)]="h"></p>
+ <p>English<input [(ngModel)]="e"></p>
+
+ <button (click)="average()">Average</button>-->  
+
+ <!-- Area of triangle using 2 way binding -->
+<!-- <h2>Area Of Triangle using 2 way binding</h2>
+ <p>Base<input [(ngModel)]="base"></p>
+ <p>Height<input [(ngModel)]="height"></p>
+
+ <button (click)="Area()">Area</button> -->
+
+ <!-- Area of triangle heron's formula using 2 way binding -->
+
+ <!-- <p>Side A<input [(ngModel)]="equiA"></p>
+ <p>Side B<input [(ngModel)]="equiB"></p>
+ <p>Side C<input [(ngModel)]="equiC"></p>
+
+ <button (click)="randomArea()">Area</button> -->
+
+ <!-- INtialize doctor object by creating doctor object-->
+<!-- 
+ <h2> Doctor details{{doctor|json}}</h2>
+ First Name---{{doctor.fname}}<br>
+ Last NAme--- {{doctor.lname}}<br><br> -->
+
+ <!-- Intialisze array of city-->
+<!-- 
+ <table border="1">
+
+  <th>City NAme</th><th>City population</th><th>City Food</th>
+  <tr *ngFor="let x of City">
+    <td>{{x.c_name}}</td>
+    <td>{{x.c_population}}</td>
+    <td>{{x.c_food}}</td>
+
+  </tr>
+ </table> -->
+
+ <!-- Doctor Example using form through textfield-->
+ <!-- <p>Doctor name<input [(ngModel)]="dname"></p>
+ <p>Doctor age<input [(ngModel)]="dage"></p>
+ <p><button (click)="save()">Save</button></p>
+
+ <table border="1">
+    <th>Doctor NAme</th><th>Doctor age</th><th>Action</th>
+    <tr *ngFor="let x of Doctor;let i=index">
+      <td>{{x.dname}}</td>
+      <td>{{x.dage}}</td>
+      <td><button (click)="deleteProducts(i)">Delete</button></td>
+  
+    </tr>
+   </table>
+
+   {{users | json}} -->
+
+   <!-- Firebase Program 1 -->
+<!-- <p>Employee Name<input [(ngModel)]="employee.emp_name"></p>
+<p>Employee Department<input [(ngModel)]="employee.emp_dept"></p>
+<p>Status is{{status}}</p>
+<p><button (click)="saveEmployee()">Save</button></p>
+
+  <table>
+<th>NAme</th><th>Department</th>
+<tr *ngFor="let x of employees">
+  <td>{{x.data.emp_name}}</td>
+  <td>{{x.data.emp_dept}}</td>
+</tr>
+
+  </table> -->
+
+  <!-- firebase program2 -->
+<!-- 
+  <p>Doctor Name<input [(ngModel)]="Ddoctor.dname"></p>
+  <p>Doctor Age<input [(ngModel)]="Ddoctor.dage"></p>
+  <p>Doctor Speciality<input [(ngModel)]="Ddoctor.speciality"></p>
+  <p>Status is{{status}}</p>
+  <p><button (click)="SaveDoctor()">SaveDoctor</button></p>
+
+  <table>
+    <th>NAme</th><th>Age</th><th>specilaity</th>
+    <tr *ngFor="let x of Doctors">
+      <td>{{x.data.dname}}</td>
+      <td>{{x.data.dage}}</td>
+      <td>{{x.data.speciality}}</td>
+    </tr>
+    
+      </table> -->
+
+      <!-- <app-cities></app-cities>
+      <app-patients></app-patients>
+      <app-testservice></app-testservice>
+      <app-actors></app-actors>
+      <app-media></app-media> -->
+      <!-- <app-employee></app-employee>
+      <app-products></app-products>
+      <app-doctor-form></app-doctor-form> -->
+      <!-- <app-registration></app-registration> -->
+       <!-- <app-reactive-register></app-reactive-register> -->
+      <!-- <div class="container-fluid">
+        <app-dynamic-form-component></app-dynamic-form-component>
+      </div> -->
+
+      <a routerLink="">Home</a>|
+      <a routerLink="/about">About</a>|
+      <a routerLink="/contact">Contact</a>
+      <hr>
+      <router-outlet></router-outlet>

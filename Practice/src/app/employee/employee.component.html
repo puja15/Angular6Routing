@@ -1,0 +1,23 @@
+<p>Employee Name :
+  <input [(ngModel)]="employee.name">
+</p>
+<p>Employee Id :
+  <input [(ngModel)]="employee.id">
+</p>
+<p>
+  <button *ngIf="btnstatus" (click)="save()">Save</button>
+  <button *ngIf="!btnstatus" (click)="update()">Update</button>
+
+</p>
+
+<table>
+  <th>Name</th>
+  <th>empid</th>
+  <th>Action</th>
+  <tr *ngFor="let x of emparray">
+    <td>{{x.data.name}}</td>
+    <td>{{x.data.id}}</td>
+    <td><button (click)="delete(x.id)">Delete</button>
+      <button (click)="edit(x)">Edit</button></td>
+  </tr>
+</table>

@@ -1,0 +1,38 @@
+<p>Name: <input [(ngModel)]="actor.name"></p>
+<p>Age: <input [(ngModel)]="actor.age"></p>
+<p>Last Film: <input [(ngModel)]="actor.lastfilm"></p>
+<p>No of awards: <input [(ngModel)]="actor.noofawards"></p>
+<p>Highest gross Films: <input [(ngModel)]="actor.highestgrossfilms"></p>
+<p>Picture: <input [(ngModel)]="actor.picture"></p>
+<p>Weight: <input [(ngModel)]="actor.weight"></p>
+<p>Height: <input [(ngModel)]="actor.height"></p>
+
+<p><button *ngIf="btn_status" (click)="SaveActor()">Save</button></p>
+<p><button *ngIf="!btn_status" (click)="updateActor()">Update</button></p>
+
+
+<table>
+
+    <th>Image</th>
+    <th>NAme</th><th>Age</th>
+    <th>Last Film</th><th>No of awards</th><th>Highest gross films</th>
+    <th>weight</th><th>height</th><th>Action</th>
+    <tr *ngFor="let x of actorarray">
+      <td>  <img [src]="x.data.picture" width=100 height=100></td>
+        <td>{{x.data.name}}</td>
+        <td>{{x.data.age}}</td>
+        <td>{{x.data.lastfilm}}</td>
+        <td>{{x.data.noofawards}}</td>
+        <td>{{x.data.highestgrossfilms}}</td>
+        <td>{{x.data.weight}}</td>
+        <td>{{x.data.height}}</td>
+        <td><button (click)="editActor(x)">Edit</button>
+            <button (click)="deleteActor(x.id)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+
+
+
+

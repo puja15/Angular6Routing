@@ -1,0 +1,19 @@
+<p>Product Name : <input [(ngModel)]="Products.name"></p><br>
+<p>Product Cost : <input [(ngModel)]="Products.cost"></p><br>
+<p>Product Brand : <input [(ngModel)]="Products.brand"></p><br>
+
+<button *ngIf="btnstatus" (click)="save()">Save</button>
+<button *ngIf="!btnstatus" (click)="update()">Update</button><br><br>
+<table>
+  <th>Name</th><th>Cost</th><th>Brand</th><th>Action</th>
+  <tr *ngFor="let x of prodarray">
+    <td>{{x.data.name}}</td>
+    <td>{{x.data.cost}}</td>
+    <td>{{x.data.brand}}</td>
+    <td><button (click)="delete(x.id)">Delete</button>
+      <button (click)="edit(x)">Edit</button>
+    </td>
+  </tr>
+</table>
+
+

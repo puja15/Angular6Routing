@@ -1,0 +1,15 @@
+<p>
+  home works!
+</p>
+
+<table class="table">
+  <th>Name</th><th>ID</th>
+  <tr *ngFor="let x of emps">
+    <td>
+      <a [routerLink]="['/info',x.id]">
+      {{x.data.name}}
+    </a>
+    </td>
+    <td>{{x.data.id}}</td>
+  </tr>
+</table>

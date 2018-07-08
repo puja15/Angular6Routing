@@ -1,0 +1,11 @@
+<form [formGroup]="docfrm">
+  <hr>
+Name<input formControlName="fnm">
+<div *ngIf="docfrm.get('fnm').errors && docfrm.get('fnm').touched">
+  <span *ngIf="docfrm.get('fnm').errors.required">Please enter NAme.</span>
+  <span *ngIf="docfrm.get('fnm').errors.minlength">Minimum length is 6.</span>
+</div>
+Age<input formControlName="age">
+<!-- <button (click)="register()">Register</button> -->
+
+</form>

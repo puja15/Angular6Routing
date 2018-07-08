@@ -1,0 +1,31 @@
+<p>Name<input [(ngModel)]="media.name"></p>
+<p>Owner<input [(ngModel)]="media.owner"></p>
+<p>TRP<input [(ngModel)]="media.trp"></p>
+<p>Headquaters<input [(ngModel)]="media.hq"></p>
+<p>Picture<input [(ngModel)]="media.picture"></p>
+<p>Turnover<input [(ngModel)]="media.turnover"></p>
+<p>marketcap<input [(ngModel)]="media.marketcap"></p>
+
+<p><button  *ngIf="btn_status" (click)="save()">Save</button>
+  <button  *ngIf="!btn_status" (click)="update()">Update</button></p>
+
+<table>
+<th>Name</th>  <th>Owner</th>
+<th>TRP</th>
+<th>HQ</th>
+<th>Turnover</th>
+<th>Market Cap</th>
+<th>Action</th>
+<tr *ngFor="let x of mediaarray">
+  <td>{{x.data.name}}</td>
+  <td>{{x.data.owner}}</td>
+  <td>{{x.data.trp}}</td>
+  <td>{{x.data.hq}}</td>
+  <td>{{x.data.turnover}}</td>
+  <td>{{x.data.marketcap}}</td>
+  <td><button (click)="editMedia(x)">Edit</button>
+    <button (click)="deleteMedia(x.id)">Delete</button>
+    
+  </td>
+</tr>
+</table>

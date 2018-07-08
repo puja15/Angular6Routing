@@ -1,0 +1,36 @@
+<form #f="ngForm">
+
+First Name:<input ngModel name="fname" required minlength="5" maxlength="10" pattern="[a-zA-Z ]*$" #f1="ngModel"><br>
+<div *ngIf="f1.errors">
+  <span *ngIf="f1.errors.required && f1.touched" style="color:red;" >Please enter characters</span>
+  <span *ngIf="f1.errors.minlength && f1.touched" style="color:red;">Please enter minimum 5 characters</span>
+  <span *ngIf="f1.errors.maxlength && f1.touched" style="color:red;">Please enter maximum 10 characters</span>
+  <span *ngIf="f1.errors.pattern && f1.touched" style="color:red;">Invalid Characters</span>
+</div>
+
+Last Name:<input ngModel name="lname" #f2="ngModel"><br>
+Age:<input ngModel name="age" #f3="ngModel" required pattern="^[0-9]*$"><br>
+<div *ngIf="f3.errors">
+<span *ngIf="f3.errors.required && f3.touched" style="color:red;">Please enter Characters</span>
+<span *ngIf="f3.errors.pattern && f3.touched" style="color:red;">Invalid number</span>
+
+</div>
+Gender:<input type="radio" ngModel name="gender" value="Male" #f4="ngModel">Male
+<input type="radio" ngModel name="gender" value="Female" #f5="ngModel">Female<br>
+Department:<select ngModel name="dept" #f6="ngModel" required>
+  <option>CSE</option>
+  <option>ETC</option>
+  <option>EE</option>
+</select><br>
+<div *ngIf="f6.errors">
+  <span *ngIf="f6.errors.required && f6.touched" style="color:red;">Please choose option</span>
+</div>
+Email:<input ngModel name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #f7="ngModel"><br>
+<div *ngIf="f7.errors">
+  <span *ngIf="f7.errors.required && f7.touched" style="color:red">Please enter email</span>
+  <span *ngIf="f7.errors.pattern && f7.touched" style="color:red">Please enter appropriate email.</span>
+</div>
+<button [disabled]="!f.valid" (click)="register(f)">Register</button>
+<button (click)="clear()">Clear</button>
+
+</form>

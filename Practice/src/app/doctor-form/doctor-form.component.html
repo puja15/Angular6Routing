@@ -1,0 +1,36 @@
+<form #f="ngForm">
+  Doctor Name :<input ngModel name="dname" required minlength="5" maxlength="10" pattern="[a-zA-Z ]*$"  #fn="ngModel"><br>
+<div *ngIf="fn.errors">
+  <span *ngIf="fn.errors.required && fn.touched" style="color:red">Please enter Character</span>
+  <span *ngIf="fn.errors.minlength && fn.touched" style="color:red">Please enter minimum of 5 characters</span>
+  <span *ngIf="fn.errors.maxlength && fn.touched" style="color:red">Maximum character should be 10.</span>
+  <span *ngIf="fn.errors.pattern && fn.touched" style="color:red">Invalid Name  </span>
+</div>
+
+  Doctor Age : <input ngModel name="dage" required><br>
+  Doctor Specilaity : <select ngModel name="dspeciality" required>
+    <option>ENT</option>
+    <option>DENTIST</option>
+    <option>abc</option>
+  </select><br>
+  Mobile number : <input ngModel name="dmobileno" required maxlength="10" pattern="^[0-9]*$" #fb="ngModel"><br>
+   <div *ngIf="fb.errors">
+    <span *ngIf="fb.errors.required && fb.touched" style="color:red">Please enter numbers</span>
+    <span *ngIf="fb.errors.maxlength && fb.touched" style="color:red">Please enter maximum 10 numbers</span>
+    <span *ngIf="fb.errors.pattern && fb.touched" style="color:red">INvalid </span>
+    
+  </div> 
+
+  <button (click)="registerDoctor()" [disabled]="!f.valid">Register</button>
+  
+  </form><br><br>
+
+  <table>
+    <th>NAme</th><th>Age</th><th>Speciality</th><th>MobileNumber</th>
+    <tr *ngFor="let x of doctorarray">
+      <td>{{x.data.dname}}</td>
+      <td>{{x.data.dage}}</td>
+      <td>{{x.data.dspeciality}}</td>
+      <td>{{x.data.dmobileno}}</td>
+    </tr>
+  </table>

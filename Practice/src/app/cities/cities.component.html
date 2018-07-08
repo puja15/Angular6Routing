@@ -1,0 +1,36 @@
+<p>
+  Name:<input [(ngModel)]="city.cname" class="form-control">
+</p>
+<p>population:<input [(ngModel)]="city.population"></p>
+<p>IMage:<input [(ngModel)]="city.image"></p>
+
+<p><button *ngIf="btn_status" (click)="saveCity()">saveCity</button></p>
+<p><button *ngIf="!btn_status" (click)="updateCity()">updateCity</button></p>
+
+<!-- <table>
+  <th>NAme</th><th>Population</th><th>Image</th><th>Action</th>
+  <tr *ngFor="let city of cities">
+    <td>{{city.data.cname}}</td>
+    <td>{{city.data.population}}</td>
+    <td>{{city.data.image}}</td>
+    <td><button (click)="delCity(key)">Delete</button></td>
+    <td></td>
+  </tr>
+  
+    </table> -->
+
+    <table class="table">
+<th>Name</th><th>Population</th><th>Action</th>
+<tr *ngFor="let city of cities">
+  <td>
+ <img [src]="city.data.image" width=100 height=100> 
+{{city.data.cname}}
+  </td>
+  <td>{{city.data.population}}</td>
+  <td>{{city.data.image}}</td>
+  <td><button (click)="delCity(city.key)">delete</button></td>
+  <td><button (click)="editCity(city)">Edit</button></td>
+</tr>
+
+    </table>
+
